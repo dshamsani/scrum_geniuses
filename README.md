@@ -1,1 +1,1 @@
-# scrum_geinuses
+# scrum_geniuses
