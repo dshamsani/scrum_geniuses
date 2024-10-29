@@ -1,5 +1,7 @@
 import type { FC } from "react";
 
 export const IndexPage: FC = () => {
-  return <div></div>;
+
+
+  return <div className="text-[red]">dlsankld</div>;
 };
