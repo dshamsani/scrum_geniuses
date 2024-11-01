@@ -1,7 +1,9 @@
 import type { FC } from "react";
 
-export const IndexPage: FC = () => {
+import { Layout } from "@/components/layout/Layout";
 
-
-  return <div className="text-[red]">dlsankld</div>;
+export const Page: FC = () => {
+  return <Layout>
+    <></>
+  </Layout>
 };
