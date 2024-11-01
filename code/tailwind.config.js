@@ -7,8 +7,11 @@ export default {
         xs: "12px",
       },
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
-        montserrat: ['Montserrat', 'sans-serif'],
+        poppins: ["Poppins", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+      },
+      spacing: {
+        minHeight: "calc(100vh - 680px)",
       },
       padding: {
         sm: "8px",

@@ -1,21 +1,18 @@
-import type {FC, ReactNode} from "react"
+import type { FC, ReactNode } from "react";
 
-import { LayoutHeader } from "./LayoutHeader"
+import { LayoutHeader } from "./LayoutHeader";
 import { LayoutFooter } from "./LayoutFooter";
 
 interface LayoutProps {
-    children: ReactNode
+  children: ReactNode;
 }
 
 export const Layout: FC<LayoutProps> = ({ children }) => {
-
   return (
-    <div className="max-w-[1350px] mx-auto">
+    <div className='mx-auto max-w-[1350px]'>
       <LayoutHeader />
-      <main>
-        {children}
-      </main>
+      <main className='min-h-minHeight'>{children}</main>
       <LayoutFooter />
     </div>
-  )
+  );
 };
