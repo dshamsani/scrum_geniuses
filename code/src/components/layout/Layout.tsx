@@ -9,10 +9,10 @@ interface LayoutProps {
 
 export const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <div className='mx-auto max-w-[1350px]'>
+    <>
       <LayoutHeader />
       <main className='min-h-minHeight'>{children}</main>
       <LayoutFooter />
-    </div>
+    </>
   );
 };
