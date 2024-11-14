@@ -27,8 +27,8 @@ jobs:
       - name: Deploy to VPS
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: your-vps-ip
-          username: user
+          host: 194.182.86.56
+          username: root
           key: ${{ secrets.DEPLOY_KEY }}
           source: ./code/dist/*
           target: /var/www/scrumgeniuses
@@ -36,8 +36,8 @@ jobs:
       - name: Reload Nginx
         uses: appleboy/ssh-action@v0.1.7
         with:
-          host: your-vps-ip
-          username: user
+          host: 194.182.86.56
+          username: root
           key: ${{ secrets.DEPLOY_KEY }}
           script: |
             sudo systemctl reload nginx
