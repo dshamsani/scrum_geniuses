@@ -1,3 +1,9 @@
+import { Header } from "./components/Layout/Header";
+
 export const App = () => {
-  return <>Hello scrum geniuses!!</>;
+  return (
+    <div className="font-helvetica">
+      <Header />
+    </div>
+  );
 };
