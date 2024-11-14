@@ -1,0 +1,43 @@
+name: Deploy React Vite App
+
+on:
+  push:
+    branches:
+      - main # Укажите ветку для деплоя
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies and build
+        working-directory: ./code
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy to VPS
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: your-vps-ip
+          username: user
+          key: ${{ secrets.DEPLOY_KEY }}
+          source: ./code/dist/*
+          target: /var/www/scrumgeniuses
+
+      - name: Reload Nginx
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: your-vps-ip
+          username: user
+          key: ${{ secrets.DEPLOY_KEY }}
+          script: |
+            sudo systemctl reload nginx
