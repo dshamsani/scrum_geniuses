@@ -1,9 +1,9 @@
-name: Deploy React Vite App
+name: Deploy Scrum Geniuses
 
 on:
   push:
     branches:
-      - main # Укажите ветку для деплоя
+      - main
 
 jobs:
   build-and-deploy:
@@ -32,6 +32,7 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           source: ./code/dist/*
           target: /var/www/scrumgeniuses
+          strip_components: 2
 
       - name: Reload Nginx
         uses: appleboy/ssh-action@v0.1.7
