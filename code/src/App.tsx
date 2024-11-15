@@ -12,7 +12,6 @@ import { format } from "date-fns";
 export const App: FC = () => {
   const [authMode, setAuthMode] = useState<"logIn" | "register" | null>(null);
   const [data, setData] = useState<any | null>(null);
-  console.log("data:", data);
 
   return (
     <div className="font-helvetica min-h-[100vh] flex flex-col justify-between">

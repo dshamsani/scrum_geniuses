@@ -12,7 +12,7 @@ interface LogInProps {
 export const LogIn: FC<LogInProps> = ({ onClose, setData }) => {
   const [role, setRole] = useState<"Autor" | "Redaktor" | "Recenzent">("Autor");
   const [login, setLogin] = useState("");
-  const [password, setPassword] = useState("");
+  // const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
     const response = await fetch(`https://admin.scrumgeniuses.cloud/items/${role}?filter[login][_eq]=${login}`, {
@@ -83,7 +83,7 @@ export const LogIn: FC<LogInProps> = ({ onClose, setData }) => {
             type="password"
             className="w-full p-3 border border-[#d5b6dc] rounded-lg focus:ring-2 focus:ring-[#692267] focus:outline-none"
             placeholder="Enter your password"
-            onChange={(e) => setPassword(e.currentTarget.value)}
+            // onChange={(e) => setPassword(e.currentTarget.value)}
           />
         </div>
         <div>
