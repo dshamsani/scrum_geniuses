@@ -13,10 +13,15 @@ export default {
       },
       fontFamily: {
         hoefler: ["Crimson Text", "sans-serif"],
-        helvetica: ["Helvetica Neue", "sans-serif"],
+        helvetica: ["Arimo", "sans-serif"],
+      },
+      spacing: {
+        desktop: "1350px",
+        minHeight: "calc(100vh - 400px)",
       },
       boxShadow: {
         "custom-drop": "0 4px 4px rgba(0, 0, 0, 0.25)",
+        "custom-drop-top": "0 -4px 4px rgba(0, 0, 0, 0.25)",
       },
     },
   },
