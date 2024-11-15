@@ -59,15 +59,15 @@ export const RegisterAutor: FC<RegisterAutorProps> = ({ onClose }) => {
         />
       </div>
       <div>
-        <label htmlFor="name" className="block text-[#692267] font-medium mb-2">
+        <label htmlFor="login" className="block text-[#692267] font-medium mb-2">
           Login
         </label>
         <input
-          id="name"
+          id="login"
           type="text"
           className="w-full p-3 border border-[#d5b6dc] rounded-lg focus:ring-2 focus:ring-[#692267] focus:outline-none"
           onChange={(e) => setLogin(e.currentTarget.value)}
-          placeholder="Your name"
+          placeholder="Your login"
         />
       </div>
       <div>

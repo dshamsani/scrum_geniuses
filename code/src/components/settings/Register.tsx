@@ -14,7 +14,6 @@ interface RegisterProps {
 
 export const Register: FC<RegisterProps> = ({ onClose }) => {
   const [role, setRole] = useState<"Autor" | "Redaktor" | "Recezent">("Autor");
-  console.log("role:", role);
 
   return (
     <div className="bg-white border border-[#d5b6dc] rounded-lg shadow-[0_4px_4px_rgba(0,0,0,0.25),0_-4px_4px_rgba(0,0,0,0.25)] p-6 max-w-md mx-auto">
