@@ -2,8 +2,6 @@ import type { FC } from "react";
 
 import { ChevronDown } from "lucide-react";
 
-import { Button } from "../ui/Button";
-
 export const Header: FC = () => {
   return (
     <header className="w-full h-[120px] flex items-center justify-between shadow-custom-drop md:p-desktop p-mobile">
@@ -21,7 +19,6 @@ export const Header: FC = () => {
         </div>
         <span className="cursor-pointer">ABOUT US</span>
         <span className="cursor-pointer">CONTACT US</span>
-        <Button title="Log in" />
       </div>
     </header>
   );
