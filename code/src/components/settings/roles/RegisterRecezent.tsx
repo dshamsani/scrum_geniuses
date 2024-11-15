@@ -36,55 +36,55 @@ export const RegisterRecezent: FC<RegisterRecezentProps> = ({ onClose }) => {
     <>
       <div>
         <label htmlFor="name" className="block text-[#692267] font-medium mb-2">
-          Name
+          Jméno
         </label>
         <input
           id="name"
           type="text"
           className="w-full p-3 border border-[#d5b6dc] rounded-lg focus:ring-2 focus:ring-[#692267] focus:outline-none"
           onChange={(e) => setName(e.currentTarget.value)}
-          placeholder="Your name"
+          placeholder="Vaše jméno"
         />
       </div>
       <div>
         <label htmlFor="name" className="block text-[#692267] font-medium mb-2">
-          Specialization
+          Specializace
         </label>
         <input
           id="name"
           type="text"
           className="w-full p-3 border border-[#d5b6dc] rounded-lg focus:ring-2 focus:ring-[#692267] focus:outline-none"
           onChange={(e) => setSpec(e.currentTarget.value)}
-          placeholder="Your specialization"
+          placeholder="Vaše specializace"
         />
       </div>
       <div>
         <label htmlFor="name" className="block text-[#692267] font-medium mb-2">
-          Login
+          Přihlašovací jméno
         </label>
         <input
           id="name"
           type="text"
           className="w-full p-3 border border-[#d5b6dc] rounded-lg focus:ring-2 focus:ring-[#692267] focus:outline-none"
           onChange={(e) => setLogin(e.currentTarget.value)}
-          placeholder="Your name"
+          placeholder="Vaše přihlašovací jméno"
         />
       </div>
       <div>
         <label htmlFor="password" className="block text-[#692267] font-medium mb-2">
-          Password
+          Heslo
         </label>
         <input
           id="password"
           type="password"
           className="w-full p-3 border border-[#d5b6dc] rounded-lg focus:ring-2 focus:ring-[#692267] focus:outline-none"
-          placeholder="Your password"
+          placeholder="Vaše heslo"
           onChange={(e) => setPassword(e.currentTarget.value)}
         />
       </div>
       <div>
         <button className="w-full bg-[#692267] text-white font-bold py-3 rounded-lg hover:bg-[#531b50] transition" onClick={handleLogin}>
-          Register
+          Registrovat
         </button>
       </div>
     </>

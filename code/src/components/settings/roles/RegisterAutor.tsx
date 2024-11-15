@@ -36,14 +36,14 @@ export const RegisterAutor: FC<RegisterAutorProps> = ({ onClose }) => {
     <>
       <div>
         <label htmlFor="name" className="block text-[#692267] font-medium mb-2">
-          Name
+          Jméno
         </label>
         <input
           id="name"
           type="text"
           className="w-full p-3 border border-[#d5b6dc] rounded-lg focus:ring-2 focus:ring-[#692267] focus:outline-none"
           onChange={(e) => setName(e.currentTarget.value)}
-          placeholder="Your name"
+          placeholder="Vaše jméno"
         />
       </div>
       <div>
@@ -54,37 +54,37 @@ export const RegisterAutor: FC<RegisterAutorProps> = ({ onClose }) => {
           id="email"
           type="email"
           className="w-full p-3 border border-[#d5b6dc] rounded-lg focus:ring-2 focus:ring-[#692267] focus:outline-none"
-          placeholder="Your email"
+          placeholder="Váš email"
           onChange={(e) => setEmail(e.currentTarget.value)}
         />
       </div>
       <div>
         <label htmlFor="login" className="block text-[#692267] font-medium mb-2">
-          Login
+          Přihlašovací jméno
         </label>
         <input
           id="login"
           type="text"
           className="w-full p-3 border border-[#d5b6dc] rounded-lg focus:ring-2 focus:ring-[#692267] focus:outline-none"
           onChange={(e) => setLogin(e.currentTarget.value)}
-          placeholder="Your login"
+          placeholder="Vaše přihlašovací jméno"
         />
       </div>
       <div>
         <label htmlFor="password" className="block text-[#692267] font-medium mb-2">
-          Password
+          Heslo
         </label>
         <input
           id="password"
           type="password"
           className="w-full p-3 border border-[#d5b6dc] rounded-lg focus:ring-2 focus:ring-[#692267] focus:outline-none"
-          placeholder="Your password"
+          placeholder="Vaše heslo"
           onChange={(e) => setPassword(e.currentTarget.value)}
         />
       </div>
       <div>
         <button className="w-full bg-[#692267] text-white font-bold py-3 rounded-lg hover:bg-[#531b50] transition" onClick={handleLogin}>
-          Register
+          Registrovat
         </button>
       </div>
     </>

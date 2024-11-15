@@ -1,6 +1,7 @@
 import type { FC } from "react";
 
 import { ChevronDown } from "lucide-react";
+import DropdownMenu from "../ui/Dropdown";
 
 export const Header: FC = () => {
   return (
@@ -10,15 +11,12 @@ export const Header: FC = () => {
       </div>
       <div className="flex text-[#692267] font-medium items-center gap-5">
         <div className="flex items-center w-fit gap-1 cursor-pointer">
-          <span>NEWS</span>
+          <span>AKTUALITY</span>
           <ChevronDown size={20} className="text-inherit" />
         </div>
-        <div className="flex items-center w-fit gap-1 cursor-pointer">
-          <span>PAGES</span>
-          <ChevronDown size={20} className="text-inherit" />
-        </div>
-        <span className="cursor-pointer">ABOUT US</span>
-        <span className="cursor-pointer">CONTACT US</span>
+        <DropdownMenu />
+        <span className="cursor-pointer">O NÁS</span>
+        <span className="cursor-pointer">KONTAKT</span>
       </div>
     </header>
   );

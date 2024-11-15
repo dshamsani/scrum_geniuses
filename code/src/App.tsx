@@ -20,8 +20,8 @@ export const App: FC = () => {
         <div className="h-full flex items-center py-10 gap-3 justify-center">
           {authMode === null && (
             <>
-              <Button title="Log in" onClick={() => setAuthMode("logIn")} />
-              <Button title="Register" onClick={() => setAuthMode("register")} />
+              <Button title="Přihlásit se" onClick={() => setAuthMode("logIn")} />
+              <Button title="Registrovat" onClick={() => setAuthMode("register")} />
             </>
           )}
           {authMode === "logIn" && <LogIn onClose={() => setAuthMode(null)} setData={setData} />}
@@ -29,7 +29,7 @@ export const App: FC = () => {
         </div>
       ) : (
         <div className="h-full flex flex-col items-center py-10 gap-3 justify-center">
-          <div className="bg-white flex-col w-[400px]  flex items-center border border-[#d5b6dc] rounded-lg shadow-[0_4px_4px_rgba(0,0,0,0.25),0_-4px_4px_rgba(0,0,0,0.25)] p-6 max-w-md mx-auto">
+          <div className="bg-white flex-col w-[400px] flex items-center border border-[#d5b6dc] rounded-lg shadow-[0_4px_4px_rgba(0,0,0,0.25),0_-4px_4px_rgba(0,0,0,0.25)] p-6 max-w-md mx-auto">
             <div className="flex w-full gap-3 text-lg items-center">
               <label htmlFor="email" className="block w-[130px] text-[#692267] font-medium mb-2">
                 Role:
@@ -37,41 +37,41 @@ export const App: FC = () => {
               <span className="block text-[#0a090a] text-sm font-medium mb-2">{data.role}</span>
             </div>
             {data?.date_created && (
-              <div className="flex w-full  gap-3 text-lg items-center">
+              <div className="flex w-full gap-3 text-lg items-center">
                 <label htmlFor="email" className="block w-[130px] text-[#692267] font-medium mb-2">
-                  Created At:
+                  Vytvořeno:
                 </label>
                 <span className="block text-[#0a090a] text-sm font-medium mb-2">{format(new Date(data.date_created), "dd-MM-yy")}</span>
               </div>
             )}
             {data?.jmeno && (
-              <div className="flex w-full  gap-3 text-lg items-center">
+              <div className="flex w-full gap-3 text-lg items-center">
                 <label htmlFor="email" className="block w-[130px] text-[#692267] font-medium mb-2">
-                  Name:
+                  Jméno:
                 </label>
                 <span className="block text-[#0a090a] text-sm font-medium mb-2">{data.jmeno}</span>
               </div>
             )}
             {data?.login && (
-              <div className="flex w-full  gap-3 text-lg items-center">
+              <div className="flex w-full gap-3 text-lg items-center">
                 <label htmlFor="email" className="block w-[130px] text-[#692267] font-medium mb-2">
-                  Login:
+                  Přihlášení:
                 </label>
                 <span className="block text-[#0a090a] text-sm font-medium mb-2">{data.login}</span>
               </div>
             )}
             {data?.kontaktni_udaje && (
-              <div className="flex w-full  gap-3 text-lg items-center">
+              <div className="flex w-full gap-3 text-lg items-center">
                 <label htmlFor="email" className="block w-[130px] text-[#692267] font-medium mb-2">
-                  Contact:
+                  Kontakt:
                 </label>
                 <span className="block text-[#0a090a] text-sm font-medium mb-2">{data.kontaktni_udaje}</span>
               </div>
             )}
             {data?.specializace && (
-              <div className="flex w-full  gap-3 text-lg items-center">
+              <div className="flex w-full gap-3 text-lg items-center">
                 <label htmlFor="email" className="block w-[130px] text-[#692267] font-medium mb-2">
-                  Specialization:
+                  Specializace:
                 </label>
                 <span className="block text-[#0a090a] text-sm font-medium mb-2">{data.specializace}</span>
               </div>
