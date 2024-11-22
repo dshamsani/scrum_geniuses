@@ -46,3 +46,9 @@ Scrum Geniuses je aplikace určená pro správu článků a procesů vydávání
 Máte-li otázky, obraťte se na podporu:
 
 - **E-mail:** choloyan@student.vspj.cz
+
+---
+
+## P.S.
+
+Tato dokumentace pokrývá funkcionalitu dostupnou po prvním sprintu vývoje. Budou přidány další funkce v budoucích verzích aplikace.
