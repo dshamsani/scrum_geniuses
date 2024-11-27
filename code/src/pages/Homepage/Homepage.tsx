@@ -1,8 +1,8 @@
 import type { FC } from "react";
 
-import { Button } from "../components/ui/Button";
-import { LogIn } from "../components/settings/LogIn";
-import { Register } from "../components/settings/Register";
+import { Button } from "../../components/ui/Button";
+import { LogIn } from "../../components/settings/LogIn";
+import { Register } from "../../components/settings/Register";
 
 import { useState } from "react";
 import { format } from "date-fns";
