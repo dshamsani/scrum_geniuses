@@ -3,20 +3,7 @@ import type { FC } from "react";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { PageSection } from "@/components/ui/PageSection";
 
-import { GoogleMap, LoadScript } from "@react-google-maps/api";
-
 export const Contact: FC = () => {
-  const containerStyle = {
-    width: "100%",
-    height: "400px",
-  };
-
-  // Укажите центр карты
-  const center = {
-    lat: 50.0755,
-    lng: 14.4378,
-  };
-
   return (
     <main className="pt-[4px]">
       <PageHeader
@@ -68,10 +55,6 @@ export const Contact: FC = () => {
               <span>Scrum Geniuses s.r.o.</span>
               <span>Tolstého 1556, 586 01 Jihlava 1</span>
             </div>
-
-            <LoadScript googleMapsApiKey="YOUR_API_KEY">
-              <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}></GoogleMap>
-            </LoadScript>
           </div>
         }
       />
