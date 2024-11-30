@@ -30,18 +30,25 @@ export const Footer: FC = () => {
           </p>
         </div>
         <div className="flex flex-col max-w-[400px] gap-4">
-          <h2 className="font-bold">Kontakt</h2>
+          <h2 className="font-bold">Kontakty</h2>
           <p>
-            Bendum dolor eu varius. Morbi fermentum velitsodales egetonec. volutpat orci. Sed ipsum felis tristique. Morbi fermentum velitsodales
-            egetonec. volutpat orci. Sed ipsum felis tristique. Bendum dolor eu varius.{" "}
+            Scrum Geniuses je tu pro vás. Máte dotazy, zpětnou vazbu nebo chcete navázat spolupráci? Rádi vás vyslechneme! Naším cílem je být
+            přístupní a nápomocní, ať už potřebujete jakékoli informace nebo podporu. Jsme tu, abychom vás inspirovali a pomohli vám dosáhnout vašich
+            cílů.
           </p>
           <div className="flex pt-3 gap-3 items-center">
             <Phone className="text-primary" />
-            <span>Telefon: +420******</span>
+            <a href="tel:+420123456789">
+              <span className="font-medium">Telefon: </span>
+              <span className="text-primary">+420123456789</span>
+            </a>
           </div>
           <div className="flex pt-3 gap-3 items-center">
             <Mail className="text-primary" />
-            <span>scrum@geniuses.cz</span>
+            <a href="mailto:choloyan@student.vspj.cz">
+              <span className="font-medium">Email: </span>
+              <span className="text-primary">choloyan@student.vspj.cz</span>
+            </a>
           </div>
         </div>
       </div>
