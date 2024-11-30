@@ -54,6 +54,13 @@ export const Contact: FC = () => {
               <span className="font-semibold">Adresa</span>
               <span>Scrum Geniuses s.r.o.</span>
               <span>Tolstého 1556, 586 01 Jihlava 1</span>
+              <a
+                href="https://www.google.com/maps/place/Vysok%C3%A1+%C5%A1kola+polytechnick%C3%A1+Jihlava+(V%C5%A0PJ)/@49.3993213,15.5795794,17z/data=!3m1!4b1!4m6!3m5!1s0x470d1a6a0a4b6b2d:0xb11c047885875623!8m2!3d49.3993213!4d15.5821543!16s%2Fg%2F121qfklq?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                className="cursor-default"
+              >
+                <img src="vspj.jpg" alt="" className="mt-10 cursor-pointer" />
+              </a>
             </div>
           </div>
         }

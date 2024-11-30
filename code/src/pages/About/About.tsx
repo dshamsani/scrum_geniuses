@@ -54,7 +54,7 @@ export const About: FC = () => {
       <PageSection
         title="Naše hodnoty"
         titleClassname="self-center"
-        wrapperClassname="max-w-[1000px] !gap-8"
+        wrapperClassname="max-w-[1000px] gap-8"
         content={
           <div className="flex w-full justify-center gap-5">
             <AboutCard
