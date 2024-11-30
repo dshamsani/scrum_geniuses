@@ -28,14 +28,14 @@ export const Homepage: FC = () => {
         <div className="h-full flex flex-col items-center py-10 gap-3 justify-center">
           <div className="bg-white flex-col w-[400px] flex items-center border border-[#d5b6dc] rounded-lg shadow-[0_4px_4px_rgba(0,0,0,0.25),0_-4px_4px_rgba(0,0,0,0.25)] p-6 max-w-md mx-auto">
             <div className="flex w-full gap-3 text-lg items-center">
-              <label htmlFor="email" className="block w-[130px] text-[#692267] font-medium mb-2">
+              <label htmlFor="email" className="block w-[130px] text-primary font-medium mb-2">
                 Role:
               </label>
               <span className="block text-[#0a090a] text-sm font-medium mb-2">{data.role}</span>
             </div>
             {data?.date_created && (
               <div className="flex w-full gap-3 text-lg items-center">
-                <label htmlFor="email" className="block w-[130px] text-[#692267] font-medium mb-2">
+                <label htmlFor="email" className="block w-[130px] text-primary font-medium mb-2">
                   Vytvořeno:
                 </label>
                 <span className="block text-[#0a090a] text-sm font-medium mb-2">{format(new Date(data.date_created), "dd-MM-yy")}</span>
@@ -43,7 +43,7 @@ export const Homepage: FC = () => {
             )}
             {data?.jmeno && (
               <div className="flex w-full gap-3 text-lg items-center">
-                <label htmlFor="email" className="block w-[130px] text-[#692267] font-medium mb-2">
+                <label htmlFor="email" className="block w-[130px] text-primary font-medium mb-2">
                   Jméno:
                 </label>
                 <span className="block text-[#0a090a] text-sm font-medium mb-2">{data.jmeno}</span>
@@ -51,7 +51,7 @@ export const Homepage: FC = () => {
             )}
             {data?.login && (
               <div className="flex w-full gap-3 text-lg items-center">
-                <label htmlFor="email" className="block w-[130px] text-[#692267] font-medium mb-2">
+                <label htmlFor="email" className="block w-[130px] text-primary font-medium mb-2">
                   Přihlášení:
                 </label>
                 <span className="block text-[#0a090a] text-sm font-medium mb-2">{data.login}</span>
@@ -59,7 +59,7 @@ export const Homepage: FC = () => {
             )}
             {data?.kontaktni_udaje && (
               <div className="flex w-full gap-3 text-lg items-center">
-                <label htmlFor="email" className="block w-[130px] text-[#692267] font-medium mb-2">
+                <label htmlFor="email" className="block w-[130px] text-primary font-medium mb-2">
                   Kontakt:
                 </label>
                 <span className="block text-[#0a090a] text-sm font-medium mb-2">{data.kontaktni_udaje}</span>
@@ -67,7 +67,7 @@ export const Homepage: FC = () => {
             )}
             {data?.specializace && (
               <div className="flex w-full gap-3 text-lg items-center">
-                <label htmlFor="email" className="block w-[130px] text-[#692267] font-medium mb-2">
+                <label htmlFor="email" className="block w-[130px] text-primary font-medium mb-2">
                   Specializace:
                 </label>
                 <span className="block text-[#0a090a] text-sm font-medium mb-2">{data.specializace}</span>

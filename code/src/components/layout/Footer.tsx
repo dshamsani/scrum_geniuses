@@ -36,11 +36,11 @@ export const Footer: FC = () => {
             egetonec. volutpat orci. Sed ipsum felis tristique. Bendum dolor eu varius.{" "}
           </p>
           <div className="flex pt-3 gap-3 items-center">
-            <Phone className="text-[#692267]" />
+            <Phone className="text-primary" />
             <span>Telefon: +420******</span>
           </div>
           <div className="flex pt-3 gap-3 items-center">
-            <Mail className="text-[#692267]" />
+            <Mail className="text-primary" />
             <span>scrum@geniuses.cz</span>
           </div>
         </div>

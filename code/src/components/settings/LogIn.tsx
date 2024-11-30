@@ -45,16 +45,16 @@ export const LogIn: FC<LogInProps> = ({ onClose, setData }) => {
   return (
     <div className="bg-white border border-[#d5b6dc] rounded-lg shadow-[0_4px_4px_rgba(0,0,0,0.25),0_-4px_4px_rgba(0,0,0,0.25)] p-6 max-w-md mx-auto ">
       <div className="flex justify-between ">
-        <h2 className="text-[#692267] text-center font-bold text-2xl mb-6">Přihlášení</h2>
-        <X className="text-[#692267] cursor-pointer" onClick={onClose} />
+        <h2 className="text-primary text-center font-bold text-2xl mb-6">Přihlášení</h2>
+        <X className="text-primary cursor-pointer" onClick={onClose} />
       </div>
       <div className="space-y-4">
-        <div className="block text-[#692267] font-medium mb-2">
-          <label className="block text-[#692267] font-medium mb-2">Role</label>
+        <div className="block text-primary font-medium mb-2">
+          <label className="block text-primary font-medium mb-2">Role</label>
           <select
             value={role}
             onChange={(e) => setRole(e.target.value as "Autor" | "Redaktor" | "Recenzent")}
-            className="w-full p-3 border  border-[#d5b6dc] rounded-lg focus:ring-2 focus:ring-[#692267] focus:outline-none"
+            className="w-full p-3 border  border-[#d5b6dc] rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
           >
             <option value="Autor">Autor</option>
             <option value="Redaktor">Redaktor</option>
@@ -62,32 +62,32 @@ export const LogIn: FC<LogInProps> = ({ onClose, setData }) => {
           </select>
         </div>
         <div>
-          <label htmlFor="email" className="block text-[#692267] font-medium mb-2">
+          <label htmlFor="email" className="block text-primary font-medium mb-2">
             Přihlašovací jméno
           </label>
           <input
             id="email"
             type="email"
-            className="w-full p-3 border border-[#d5b6dc] rounded-lg focus:ring-2 focus:ring-[#692267] focus:outline-none"
+            className="w-full p-3 border border-[#d5b6dc] rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
             placeholder="Zadejte své přihlašovací jméno"
             onChange={(e) => setLogin(e.currentTarget.value)}
             required
           />
         </div>
         <div>
-          <label htmlFor="password" className="block text-[#692267] font-medium mb-2">
+          <label htmlFor="password" className="block text-primary font-medium mb-2">
             Heslo
           </label>
           <input
             id="password"
             type="password"
-            className="w-full p-3 border border-[#d5b6dc] rounded-lg focus:ring-2 focus:ring-[#692267] focus:outline-none"
+            className="w-full p-3 border border-[#d5b6dc] rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
             placeholder="Zadejte své heslo"
             // onChange={(e) => setPassword(e.currentTarget.value)}
           />
         </div>
         <div>
-          <button className="w-full bg-[#692267] text-white font-bold py-3 rounded-lg hover:bg-[#531b50] transition" onClick={handleLogin}>
+          <button className="w-full bg-primary text-white font-bold py-3 rounded-lg hover:bg-[#531b50] transition" onClick={handleLogin}>
             Přihlásit se
           </button>
         </div>
