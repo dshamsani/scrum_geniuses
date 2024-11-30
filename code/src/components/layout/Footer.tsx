@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Mail, Phone } from "lucide-react";
 import type { FC } from "react";
 
@@ -6,10 +7,19 @@ export const Footer: FC = () => {
     <footer className="shadow-custom-drop-top h-[400px] flex p-mobile md:p-desktop">
       <div className="flex h-fit w-full justify-between pt-8">
         <div className="flex text-[15px] flex-col gap-4">
-          <h2 className="font-bold">O Nás</h2>
+          <Link to="/about">
+            <h2 className="font-bold">O Nás</h2>
+          </Link>
           <div className="flex flex-col gap-3">
-            <span className="">Organizace</span>
-            <span>Partneři</span>
+            <Link to="/about">
+              <span>Naše historie</span>
+            </Link>
+            <Link to="/about">
+              <span>Kdo jsme</span>
+            </Link>
+            <Link to="/about">
+              <span>Naše hodnoty</span>
+            </Link>
           </div>
         </div>
         <div className="flex flex-col max-w-[400px] gap-4">
