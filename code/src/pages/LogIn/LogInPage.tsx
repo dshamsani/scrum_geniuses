@@ -1,14 +1,19 @@
 import type { FC } from "react";
 
 import { useState } from "react";
+import { useNavigate } from "@tanstack/react-router";
+import { useAuth } from "@/context/AuthContext";
 
 export const LogInPage: FC = () => {
   const [role, setRole] = useState<"Autor" | "Redaktor" | "Recenzent">("Autor");
   const [login, setLogin] = useState("");
-  // const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+  const { setAuth } = useAuth();
 
   const handleLogin = async () => {
-    const response = await fetch(`https://admin.scrumgeniuses.cloud/items/${role}?filter[login][_eq]=${login}`, {
+    const response = await fetch(`https://admin.scrumgeniuses.cloud/items/${role}?filter[login][_eq]=${login}&[heslo][_eq]=${password}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -28,7 +33,11 @@ export const LogInPage: FC = () => {
     const user = data.data[0];
 
     if (user) {
-      console.log(user);
+      localStorage.setItem("auth", JSON.stringify(user));
+      setAuth(true);
+      navigate({
+        to: "/",
+      });
     }
   };
 
@@ -73,7 +82,7 @@ export const LogInPage: FC = () => {
               type="password"
               className="w-full p-3 border border-[#d5b6dc] rounded-lg focus:ring-2 focus:ring-primary focus:outline-none"
               placeholder="Zadejte své heslo"
-              // onChange={(e) => setPassword(e.currentTarget.value)}
+              onChange={(e) => setPassword(e.currentTarget.value)}
             />
           </div>
           <div>
