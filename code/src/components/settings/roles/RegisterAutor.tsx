@@ -1,16 +1,15 @@
+import { useNavigate } from "@tanstack/react-router";
 import type { FC } from "react";
 
 import { useState } from "react";
 
-interface RegisterAutorProps {
-  onClose?: () => void;
-}
-
-export const RegisterAutor: FC<RegisterAutorProps> = ({ onClose }) => {
+export const RegisterAutor: FC = () => {
   const [login, setLogin] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [name, setName] = useState<string>("");
+
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     await fetch(`https://admin.scrumgeniuses.cloud/items/Autor/`, {
@@ -24,12 +23,16 @@ export const RegisterAutor: FC<RegisterAutorProps> = ({ onClose }) => {
         heslo: password,
         kontaktni_udaje: email,
       }),
-    }).then(() => {
-      alert(`Successfuly registered as Autor`);
-      if (onClose) {
-        onClose();
-      }
-    });
+    })
+      .then(() => {
+        alert(`Successfuly registered as Autor`);
+        navigate({
+          to: "/login",
+        });
+      })
+      .catch(() => {
+        alert("Error during register.");
+      });
   };
 
   return (

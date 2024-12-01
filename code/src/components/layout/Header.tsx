@@ -3,6 +3,7 @@ import type { FC } from "react";
 import { ChevronDown } from "lucide-react";
 import DropdownMenu from "../ui/Dropdown";
 import { Link } from "@tanstack/react-router";
+import { Button } from "../ui/Button";
 
 export const Header: FC = () => {
   return (
@@ -23,6 +24,14 @@ export const Header: FC = () => {
         </Link>
         <Link to="/contact">
           <span className="cursor-pointer uppercase">Kontakty</span>
+        </Link>
+      </div>
+      <div className="flex items-center gap-3">
+        <Link to="/login">
+          <Button title="Přihlásit se" />
+        </Link>
+        <Link to="/register">
+          <Button title="Registrovat" />
         </Link>
       </div>
     </header>

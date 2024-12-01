@@ -1,16 +1,15 @@
 import type { FC } from "react";
 
 import { useState } from "react";
+import { useNavigate } from "@tanstack/react-router";
 
-interface RegisterRecezentProps {
-  onClose?: () => void;
-}
-
-export const RegisterRecezent: FC<RegisterRecezentProps> = ({ onClose }) => {
+export const RegisterRecezent: FC = () => {
   const [login, setLogin] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [spec, setSpec] = useState<string>("");
   const [name, setName] = useState<string>("");
+
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     await fetch(`https://admin.scrumgeniuses.cloud/items/Recenzent/`, {
@@ -24,12 +23,16 @@ export const RegisterRecezent: FC<RegisterRecezentProps> = ({ onClose }) => {
         specializace: spec,
         heslo: password,
       }),
-    }).then(() => {
-      alert(`Successfuly registered as Recenzent`);
-      if (onClose) {
-        onClose();
-      }
-    });
+    })
+      .then(() => {
+        alert(`Successfuly registered as Recenzent`);
+        navigate({
+          to: "/login",
+        });
+      })
+      .catch(() => {
+        alert("Error during register.");
+      });
   };
 
   return (

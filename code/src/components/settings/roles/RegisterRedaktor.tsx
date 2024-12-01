@@ -1,15 +1,14 @@
 import type { FC } from "react";
 
 import { useState } from "react";
+import { useNavigate } from "@tanstack/react-router";
 
-interface RegisterRedaktorProps {
-  onClose?: () => void;
-}
-
-export const RegisterRedaktor: FC<RegisterRedaktorProps> = ({ onClose }) => {
+export const RegisterRedaktor: FC = () => {
   const [login, setLogin] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [name, setName] = useState<string>("");
+
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     await fetch(`https://admin.scrumgeniuses.cloud/items/Redaktor/`, {
@@ -23,12 +22,16 @@ export const RegisterRedaktor: FC<RegisterRedaktorProps> = ({ onClose }) => {
         role: "Redaktor",
         heslo: password,
       }),
-    }).then(() => {
-      alert(`Successfuly registered as Redaktor`);
-      if (onClose) {
-        onClose();
-      }
-    });
+    })
+      .then(() => {
+        alert(`Successfuly registered as Redaktor`);
+        navigate({
+          to: "/login",
+        });
+      })
+      .catch(() => {
+        alert("Error during register.");
+      });
   };
 
   return (
