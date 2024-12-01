@@ -1,18 +1,42 @@
 import type { Dispatch, FC, PropsWithChildren, SetStateAction } from "react";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 interface AuthContextProps {
   isAuth: boolean;
+  role: string | undefined;
   setAuth: Dispatch<SetStateAction<boolean>>;
 }
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
 export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [isAuth, setAuth] = useState<boolean>(false);
+  const [isAuth, setAuth] = useState<boolean>(
+    (() => {
+      const auth = localStorage.getItem("auth");
 
-  return <AuthContext.Provider value={{ isAuth, setAuth }}>{children}</AuthContext.Provider>;
+      return !!auth;
+    })()
+  );
+  const [role, setRole] = useState<string | undefined>();
+
+  useEffect(() => {
+    if (isAuth) {
+      const auth = localStorage.getItem("auth");
+
+      if (auth) {
+        const user = JSON.parse(auth);
+        console.log("useEffect  user:", user);
+
+        setRole(user.role);
+        return;
+      }
+    }
+
+    setRole(undefined);
+  }, [isAuth]);
+
+  return <AuthContext.Provider value={{ isAuth, role, setAuth }}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = (): AuthContextProps => {

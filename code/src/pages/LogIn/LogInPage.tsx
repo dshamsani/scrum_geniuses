@@ -33,7 +33,13 @@ export const LogInPage: FC = () => {
     const user = data.data[0];
 
     if (user) {
-      localStorage.setItem("auth", JSON.stringify(user));
+      localStorage.setItem(
+        "auth",
+        JSON.stringify({
+          role,
+          ...user,
+        })
+      );
       setAuth(true);
       navigate({
         to: "/",
