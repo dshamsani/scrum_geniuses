@@ -43,6 +43,9 @@ export const Header: FC = () => {
         <Link to="/contact">
           <span className="cursor-pointer uppercase">Kontakty</span>
         </Link>
+        <Link to="/archive">
+          <span className="cursor-pointer uppercase">Archiv</span>
+        </Link>
       </div>
       {isAuth ? (
         <Button title="Odhlasit se" onClick={handleLogOut} />
