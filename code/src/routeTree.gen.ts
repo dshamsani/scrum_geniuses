@@ -12,7 +12,10 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
+import { Route as RegisterIndexImport } from './routes/register/index'
+import { Route as LoginIndexImport } from './routes/login/index'
 import { Route as ContactIndexImport } from './routes/contact/index'
+import { Route as ArchiveIndexImport } from './routes/archive/index'
 import { Route as AboutIndexImport } from './routes/about/index'
 
 // Create/Update Routes
@@ -23,9 +26,27 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const RegisterIndexRoute = RegisterIndexImport.update({
+  id: '/register/',
+  path: '/register/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const LoginIndexRoute = LoginIndexImport.update({
+  id: '/login/',
+  path: '/login/',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const ContactIndexRoute = ContactIndexImport.update({
   id: '/contact/',
   path: '/contact/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ArchiveIndexRoute = ArchiveIndexImport.update({
+  id: '/archive/',
+  path: '/archive/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -53,11 +74,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutIndexImport
       parentRoute: typeof rootRoute
     }
+    '/archive/': {
+      id: '/archive/'
+      path: '/archive'
+      fullPath: '/archive'
+      preLoaderRoute: typeof ArchiveIndexImport
+      parentRoute: typeof rootRoute
+    }
     '/contact/': {
       id: '/contact/'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/login/': {
+      id: '/login/'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/register/': {
+      id: '/register/'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -68,41 +110,63 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutIndexRoute
+  '/archive': typeof ArchiveIndexRoute
   '/contact': typeof ContactIndexRoute
+  '/login': typeof LoginIndexRoute
+  '/register': typeof RegisterIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutIndexRoute
+  '/archive': typeof ArchiveIndexRoute
   '/contact': typeof ContactIndexRoute
+  '/login': typeof LoginIndexRoute
+  '/register': typeof RegisterIndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/about/': typeof AboutIndexRoute
+  '/archive/': typeof ArchiveIndexRoute
   '/contact/': typeof ContactIndexRoute
+  '/login/': typeof LoginIndexRoute
+  '/register/': typeof RegisterIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact'
+  fullPaths: '/' | '/about' | '/archive' | '/contact' | '/login' | '/register'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact'
-  id: '__root__' | '/' | '/about/' | '/contact/'
+  to: '/' | '/about' | '/archive' | '/contact' | '/login' | '/register'
+  id:
+    | '__root__'
+    | '/'
+    | '/about/'
+    | '/archive/'
+    | '/contact/'
+    | '/login/'
+    | '/register/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutIndexRoute: typeof AboutIndexRoute
+  ArchiveIndexRoute: typeof ArchiveIndexRoute
   ContactIndexRoute: typeof ContactIndexRoute
+  LoginIndexRoute: typeof LoginIndexRoute
+  RegisterIndexRoute: typeof RegisterIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutIndexRoute: AboutIndexRoute,
+  ArchiveIndexRoute: ArchiveIndexRoute,
   ContactIndexRoute: ContactIndexRoute,
+  LoginIndexRoute: LoginIndexRoute,
+  RegisterIndexRoute: RegisterIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -117,7 +181,10 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/about/",
-        "/contact/"
+        "/archive/",
+        "/contact/",
+        "/login/",
+        "/register/"
       ]
     },
     "/": {
@@ -126,8 +193,17 @@ export const routeTree = rootRoute
     "/about/": {
       "filePath": "about/index.tsx"
     },
+    "/archive/": {
+      "filePath": "archive/index.tsx"
+    },
     "/contact/": {
       "filePath": "contact/index.tsx"
+    },
+    "/login/": {
+      "filePath": "login/index.tsx"
+    },
+    "/register/": {
+      "filePath": "register/index.tsx"
     }
   }
 }
