@@ -2,6 +2,7 @@ import type { Autor } from "@/types/autor";
 import type { FC } from "react";
 
 import { AutorHomepage } from "@/components/homepage/AutorHomepage";
+import { ActualsHomepage } from "@/components/homepage/ActualsHomepage";
 
 import { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
@@ -24,5 +25,5 @@ export const Homepage: FC = () => {
     return <AutorHomepage user={user} />;
   }
 
-  return <div>Hello, {role ? role : "Ctenar"}!</div>;
+  return <ActualsHomepage />;
 };
