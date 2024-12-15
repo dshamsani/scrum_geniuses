@@ -32,10 +32,11 @@ export const Header: FC = () => {
         </div>
       </Link>
       <div className="flex text-primary font-medium items-center gap-5">
-        <div className="flex items-center w-fit gap-1 cursor-pointer">
-          <span>AKTUALITY</span>
-          <ChevronDown size={20} className="text-inherit" />
-        </div>
+        <Link to="/">
+          <div className="flex items-center w-fit gap-1 cursor-pointer">
+            <span>AKTUALITY</span>
+          </div>
+        </Link>
         <DropdownMenu />
         <Link to="/about">
           <span className="cursor-pointer">O NÁS</span>
