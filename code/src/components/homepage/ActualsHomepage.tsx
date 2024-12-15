@@ -31,8 +31,8 @@ export const ActualsHomepage: FC = () => {
       <PageHeader title="Aktuality" description="" />
       <div className="flex w-full p-desktop justify-center pb-10">
         <div className="max-w-[1350px] w-full flex flex-wrap gap-10">
-          {(data ?? []).map(({ id, nazev, text_clanku }) => (
-            <ArticleCard key={id} title={nazev} description={text_clanku} />
+          {(data ?? []).map(({ id, nazev, text_clanku, date_created }) => (
+            <ArticleCard key={id} title={nazev} description={text_clanku} date={date_created} />
           ))}
         </div>
       </div>
