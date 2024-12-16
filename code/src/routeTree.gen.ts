@@ -14,6 +14,7 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as RegisterIndexImport } from './routes/register/index'
 import { Route as LoginIndexImport } from './routes/login/index'
+import { Route as JournalIndexImport } from './routes/journal/index'
 import { Route as ContactIndexImport } from './routes/contact/index'
 import { Route as ArchiveIndexImport } from './routes/archive/index'
 import { Route as AboutIndexImport } from './routes/about/index'
@@ -35,6 +36,12 @@ const RegisterIndexRoute = RegisterIndexImport.update({
 const LoginIndexRoute = LoginIndexImport.update({
   id: '/login/',
   path: '/login/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const JournalIndexRoute = JournalIndexImport.update({
+  id: '/journal/',
+  path: '/journal/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -88,6 +95,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactIndexImport
       parentRoute: typeof rootRoute
     }
+    '/journal/': {
+      id: '/journal/'
+      path: '/journal'
+      fullPath: '/journal'
+      preLoaderRoute: typeof JournalIndexImport
+      parentRoute: typeof rootRoute
+    }
     '/login/': {
       id: '/login/'
       path: '/login'
@@ -112,6 +126,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutIndexRoute
   '/archive': typeof ArchiveIndexRoute
   '/contact': typeof ContactIndexRoute
+  '/journal': typeof JournalIndexRoute
   '/login': typeof LoginIndexRoute
   '/register': typeof RegisterIndexRoute
 }
@@ -121,6 +136,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutIndexRoute
   '/archive': typeof ArchiveIndexRoute
   '/contact': typeof ContactIndexRoute
+  '/journal': typeof JournalIndexRoute
   '/login': typeof LoginIndexRoute
   '/register': typeof RegisterIndexRoute
 }
@@ -131,21 +147,37 @@ export interface FileRoutesById {
   '/about/': typeof AboutIndexRoute
   '/archive/': typeof ArchiveIndexRoute
   '/contact/': typeof ContactIndexRoute
+  '/journal/': typeof JournalIndexRoute
   '/login/': typeof LoginIndexRoute
   '/register/': typeof RegisterIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/archive' | '/contact' | '/login' | '/register'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/archive'
+    | '/contact'
+    | '/journal'
+    | '/login'
+    | '/register'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/archive' | '/contact' | '/login' | '/register'
+  to:
+    | '/'
+    | '/about'
+    | '/archive'
+    | '/contact'
+    | '/journal'
+    | '/login'
+    | '/register'
   id:
     | '__root__'
     | '/'
     | '/about/'
     | '/archive/'
     | '/contact/'
+    | '/journal/'
     | '/login/'
     | '/register/'
   fileRoutesById: FileRoutesById
@@ -156,6 +188,7 @@ export interface RootRouteChildren {
   AboutIndexRoute: typeof AboutIndexRoute
   ArchiveIndexRoute: typeof ArchiveIndexRoute
   ContactIndexRoute: typeof ContactIndexRoute
+  JournalIndexRoute: typeof JournalIndexRoute
   LoginIndexRoute: typeof LoginIndexRoute
   RegisterIndexRoute: typeof RegisterIndexRoute
 }
@@ -165,6 +198,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutIndexRoute: AboutIndexRoute,
   ArchiveIndexRoute: ArchiveIndexRoute,
   ContactIndexRoute: ContactIndexRoute,
+  JournalIndexRoute: JournalIndexRoute,
   LoginIndexRoute: LoginIndexRoute,
   RegisterIndexRoute: RegisterIndexRoute,
 }
@@ -183,6 +217,7 @@ export const routeTree = rootRoute
         "/about/",
         "/archive/",
         "/contact/",
+        "/journal/",
         "/login/",
         "/register/"
       ]
@@ -198,6 +233,9 @@ export const routeTree = rootRoute
     },
     "/contact/": {
       "filePath": "contact/index.tsx"
+    },
+    "/journal/": {
+      "filePath": "journal/index.tsx"
     },
     "/login/": {
       "filePath": "login/index.tsx"

@@ -5,9 +5,12 @@ import { PageHeader } from "../ui/PageHeader";
 import { ArticleCard } from "../ui/ArticleCard";
 
 import { useEffect, useState } from "react";
+import { useCategory } from "@/context/CategoryContext";
+import { categories } from "@/constants/category";
 
 export const ActualsHomepage: FC = () => {
   const [data, setData] = useState<Article[]>([]);
+  const { category } = useCategory();
 
   useEffect(() => {
     const handleFetch = async () => {
@@ -28,12 +31,14 @@ export const ActualsHomepage: FC = () => {
 
   return (
     <main className="py-[4px]">
-      <PageHeader title="Aktuality" description="" />
+      <PageHeader title={`${category ? categories[category] : "Aktuality"}`} description="" />
       <div className="flex w-full p-desktop justify-center pb-10">
         <div className="max-w-[1350px] w-full flex flex-wrap gap-10">
-          {(data ?? []).map(({ id, nazev, text_clanku, date_created }) => (
-            <ArticleCard key={id} title={nazev} description={text_clanku} date={date_created} />
-          ))}
+          {(data ?? [])
+            .filter((item) => (category ? item.Temata.includes(category) : item))
+            .map(({ id, nazev, text_clanku, date_created }) => (
+              <ArticleCard key={id} title={nazev} description={text_clanku} date={date_created} />
+            ))}
         </div>
       </div>
     </main>

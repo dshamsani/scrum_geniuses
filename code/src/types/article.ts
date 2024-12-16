@@ -5,4 +5,5 @@ export interface Article {
   autor: number;
   text_clanku: string;
   status: "navrh" | "Odeslano";
+  Temata: ("zajimave" | "ruzne" | "historie")[];
 }

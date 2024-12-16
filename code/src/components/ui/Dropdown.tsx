@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { useCategory } from "@/context/CategoryContext";
 
 const DropdownMenu = () => {
+  const { setCategory } = useCategory();
+
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => setIsHovered(true);
@@ -15,13 +18,18 @@ const DropdownMenu = () => {
       </div>
       {isHovered && (
         <ul className="absolute top-full w-40 bg-white border border-gray-300 shadow-lg rounded">
-          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Kultura</li>
-          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Móda</li>
-          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Technologie</li>
-          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Zdraví</li>
-          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Věda</li>
-          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Jídlo</li>
-          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Sport</li>
+          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => setCategory(undefined)}>
+            Vse
+          </li>
+          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => setCategory("zajimave")}>
+            Zajímavé
+          </li>
+          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => setCategory("historie")}>
+            Historie
+          </li>
+          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => setCategory("ruzne")}>
+            Různé
+          </li>
         </ul>
       )}
     </div>
