@@ -1,6 +1,5 @@
 import type { FC } from "react";
 
-import { ChevronDown } from "lucide-react";
 import DropdownMenu from "../ui/Dropdown";
 import { Link } from "@tanstack/react-router";
 import { Button } from "../ui/Button";
